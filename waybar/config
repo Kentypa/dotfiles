@@ -1,0 +1,67 @@
+{
+    "layer": "top",
+    "position": "top",
+    "reload_style_on_change": true,
+    "modules-left": ["clock"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["pulseaudio", "battery", "tray"],
+
+    "clock": {
+        "format": "{:%I:%M:%S %p} ",
+        "interval": 1,   
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "format": {
+                "today": "<span color='#fAfBfC'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "shift_down",
+            "on-click": "shift_up"
+        }
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": ""
+        },
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        }
+    },
+
+     "pulseaudio": {
+        "reverse-scrolling": 1,
+        "format": "{volume}% {icon}  {format_source}",
+        "format-bluetooth": "{volume}% {icon} 󰂰 {format_source}",
+        "format-bluetooth-muted": "󰖁 {icon} 󰂰 {format_source}",
+        "format-muted": "󰖁 {format_source}",
+        "format-source-muted": "󰍭",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰄝",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "min-length": 15,
+        "tooltip": true
+    },
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
+}
